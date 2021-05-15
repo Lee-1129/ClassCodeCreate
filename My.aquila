@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Aquila:Model xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Aquila="http://www.ustb.edu.cn/sei/mde/Aquila" UUID="ee8f40ff-b5f9-4d09-a571-66e8ac2b5f23">
+  <elements xsi:type="Aquila:AqClass" name="学生" superTypes="//@elements.3">
+    <structuralFeatures xsi:type="Aquila:AqAttribute" name="学号" upperBound="1"/>
+    <structuralFeatures xsi:type="Aquila:AqAttribute" name="已加入的课程" upperBound="1"/>
+    <structuralFeatures xsi:type="Aquila:AqReference" name="参与课堂" lowerBound="200" upperBound="1" referenceType="//@elements.8"/>
+    <operations name="加入课堂" upperBound="1"/>
+    <operations name="举手发言" upperBound="1"/>
+    <operations name="通过共享屏幕等方式参与讨论" upperBound="1"/>
+    <operations name="参与在线测试" upperBound="1"/>
+    <operations name="提交作业" upperBound="1"/>
+  </elements>
+  <elements xsi:type="Aquila:AqClass" name="教师" superTypes="//@elements.12">
+    <structuralFeatures xsi:type="Aquila:AqAttribute" name="教授的课程" upperBound="1"/>
+    <structuralFeatures xsi:type="Aquila:AqReference" name="教授课程" lowerBound="1" upperBound="10" referenceType="//@elements.8"/>
+    <operations name="开启课堂" upperBound="1"/>
+    <operations name="点名" upperBound="1"/>
+    <operations name="要求学生发言" upperBound="1"/>
+    <operations name="发布在线测试和作业" upperBound="1"/>
+    <operations name="统计学生的学习情况" upperBound="1"/>
+    <operations name="批阅作业和测试" upperBound="1"/>
+    <operations name="定义测验性质" upperBound="1"/>
+    <operations name="发布测验" upperBound="1"/>
+    <operations name="编辑测验内容" upperBound="1"/>
+    <operations name="增加测验剩余时间" upperBound="1"/>
+    <operations name="提前收卷" upperBound="1"/>
+    <operations name="保存学生成绩" upperBound="1"/>
+    <dependencies target="//@elements.5" kind="call"/>
+  </elements>
+  <elements xsi:type="Aquila:AqClass" name="教务" superTypes="//@elements.12">
+    <operations name="导入课程信息" upperBound="1"/>
+    <operations name="导出成绩信息" upperBound="1"/>
+    <dependencies target="//@elements.6" kind="call"/>
+    <dependencies target="//@elements.5" kind="call"/>
+    <dependencies target="//@elements.0" kind="call"/>
+    <dependencies target="//@elements.1" kind="call"/>
+  </elements>
+  <elements xsi:type="Aquila:AqClass" name="用户">
+    <structuralFeatures xsi:type="Aquila:AqAttribute" name="帐号" upperBound="1"/>
+    <structuralFeatures xsi:type="Aquila:AqAttribute" name="密码" upperBound="1"/>
+    <structuralFeatures xsi:type="Aquila:AqAttribute" name="账号权限等级" upperBound="1"/>
+    <structuralFeatures xsi:type="Aquila:AqAttribute" name="ID" upperBound="1"/>
+    <structuralFeatures xsi:type="Aquila:AqAttribute" name="姓名" upperBound="1"/>
+    <operations name="登录" upperBound="1"/>
+    <operations name="退出" upperBound="1"/>
+  </elements>
+  <elements xsi:type="Aquila:AqClass" name="督导" superTypes="//@elements.12">
+    <operations name="加入课堂旁听" upperBound="1"/>
+    <operations name="填写听课评语" upperBound="1"/>
+    <dependencies target="//@elements.8" kind="call"/>
+  </elements>
+  <elements xsi:type="Aquila:AqClass" name="学生成绩信息">
+    <structuralFeatures xsi:type="Aquila:AqAttribute" name="学生ID" upperBound="1"/>
+    <structuralFeatures xsi:type="Aquila:AqAttribute" name="课程ID" upperBound="1"/>
+    <structuralFeatures xsi:type="Aquila:AqAttribute" name="学生成绩" upperBound="1"/>
+    <structuralFeatures xsi:type="Aquila:AqAttribute" name="学生姓名" upperBound="1"/>
+    <structuralFeatures xsi:type="Aquila:AqAttribute" name="课程名" upperBound="1"/>
+  </elements>
+  <elements xsi:type="Aquila:AqClass" name="课程信息">
+    <structuralFeatures xsi:type="Aquila:AqAttribute" name="课程ID" upperBound="1"/>
+    <structuralFeatures xsi:type="Aquila:AqAttribute" name="课程名称" upperBound="1"/>
+    <structuralFeatures xsi:type="Aquila:AqAttribute" name="授课教师姓名" upperBound="1"/>
+    <structuralFeatures xsi:type="Aquila:AqAttribute" name="课程学生人数" upperBound="1"/>
+    <structuralFeatures xsi:type="Aquila:AqAttribute" name="授课教师ID" upperBound="1"/>
+    <structuralFeatures xsi:type="Aquila:AqAttribute" name="参与课程的学生" upperBound="1"/>
+    <structuralFeatures xsi:type="Aquila:AqAttribute" name="参与课程的学生ID" upperBound="1"/>
+  </elements>
+  <elements xsi:type="Aquila:AqClass" name="屏幕" superTypes="//@elements.14">
+    <structuralFeatures xsi:type="Aquila:AqAttribute" name="屏幕内容" upperBound="1"/>
+    <operations name="屏幕共享" upperBound="1"/>
+    <operations name="开启黑板" upperBound="1"/>
+    <operations name="关闭黑板" upperBound="1"/>
+    <dependencies target="//@elements.9" kind="call"/>
+  </elements>
+  <elements xsi:type="Aquila:AqClass" name="课堂">
+    <structuralFeatures xsi:type="Aquila:AqAttribute" name="当前课堂内听课人数" upperBound="1"/>
+    <structuralFeatures xsi:type="Aquila:AqAttribute" name="应到学生人数" upperBound="1"/>
+    <structuralFeatures xsi:type="Aquila:AqAttribute" name="课堂功能使用权限" upperBound="1"/>
+    <structuralFeatures xsi:type="Aquila:AqAttribute" name="授课教师姓名" upperBound="1"/>
+    <structuralFeatures xsi:type="Aquila:AqAttribute" name="当前课堂内学生信息" upperBound="1"/>
+    <operations name="开启屏幕共享" upperBound="1"/>
+    <operations name="关闭屏幕共享" upperBound="1"/>
+    <operations name="开启麦克风" upperBound="1"/>
+    <operations name="关闭麦克风" upperBound="1"/>
+    <dependencies target="//@elements.7" kind="call"/>
+    <dependencies target="//@elements.13" kind="call"/>
+    <dependencies target="//@elements.11" kind="call"/>
+  </elements>
+  <elements xsi:type="Aquila:AqClass" name="黑板" superTypes="//@elements.14">
+    <structuralFeatures xsi:type="Aquila:AqAttribute" name="长" upperBound="1"/>
+    <structuralFeatures xsi:type="Aquila:AqAttribute" name="宽" upperBound="1"/>
+    <structuralFeatures xsi:type="Aquila:AqAttribute" name="背景色" upperBound="1"/>
+    <operations name="启用电子白板笔" upperBound="1"/>
+    <operations name="橡皮擦" upperBound="1"/>
+    <operations name="清屏" upperBound="1"/>
+    <operations name="关闭电子白板笔" upperBound="1"/>
+    <operations name="适应屏幕" upperBound="1"/>
+    <operations name="调整长宽" upperBound="1"/>
+    <operations name="调整背景色" upperBound="1"/>
+    <dependencies target="//@elements.10" kind="call"/>
+  </elements>
+  <elements xsi:type="Aquila:AqClass" name="电子白板笔" superTypes="//@elements.14">
+    <structuralFeatures xsi:type="Aquila:AqAttribute" name="笔迹宽度" upperBound="1"/>
+    <structuralFeatures xsi:type="Aquila:AqAttribute" name="笔迹颜色" upperBound="1"/>
+    <structuralFeatures xsi:type="Aquila:AqAttribute" name="笔迹亮度" upperBound="1"/>
+    <operations name="调整笔迹宽度" upperBound="1"/>
+    <operations name="调整笔记颜色" upperBound="1"/>
+    <operations name="调整笔迹亮度" upperBound="1"/>
+  </elements>
+  <elements xsi:type="Aquila:AqClass" name="测验">
+    <structuralFeatures xsi:type="Aquila:AqAttribute" name="测验性质" upperBound="1"/>
+    <structuralFeatures xsi:type="Aquila:AqAttribute" name="在线测验剩余时间" upperBound="1"/>
+    <structuralFeatures xsi:type="Aquila:AqAttribute" name="测验内容" upperBound="1"/>
+    <structuralFeatures xsi:type="Aquila:AqAttribute" name="测验成绩" upperBound="1"/>
+  </elements>
+  <elements xsi:type="Aquila:AqClass" name="职工" superTypes="//@elements.3">
+    <structuralFeatures xsi:type="Aquila:AqAttribute" name="工号" upperBound="1"/>
+  </elements>
+  <elements xsi:type="Aquila:AqClass" name="麦克风" superTypes="//@elements.14">
+    <structuralFeatures xsi:type="Aquila:AqAttribute" name="音量" upperBound="1"/>
+    <operations name="音量调节" upperBound="1"/>
+  </elements>
+  <elements xsi:type="Aquila:AqClass" name="课堂工具"/>
+</Aquila:Model>
