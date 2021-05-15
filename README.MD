@@ -7,17 +7,7 @@
 
 # 1   使用方法
 
-​		新建一个目录，将代码文件和你要输入的一个Aquila类图模型（aquila文件）放入到这个目录下，**运行***ClassCodeCreate.py****，会得到一个code.cpp文件，这里存放的是代码生成的结果，生成的代码是**C++**样式的。Aquila类图模型示例：
-
-![img](file:///C:/Users/MSI-PC/AppData/Local/Temp/msohtmlclip1/01/clip_image002.jpg)
-
-​																				
-
-代码生成后部分结果如下图：
-
-![img](file:///C:/Users/MSI-PC/AppData/Local/Temp/msohtmlclip1/01/clip_image004.jpg)
-
-​																			
+​		新建一个目录，将代码文件和你要输入的一个Aquila类图模型（aquila文件）放入到这个目录下，**运行ClassCodeCreate.py**，会得到一个code.cpp文件，这里存放的是代码生成的结果，生成的代码是**C++**样式的。																	
 
 # 2   注意事项
 
